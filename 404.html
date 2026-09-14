@@ -2,201 +2,648 @@
 <html lang="en">
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Page Not Found | Toolbaba</title>
+  <title>Page Not Found | Toolbaba</title>
 
-<meta name="robots" content="noindex">
+  <meta name="description"
+        content="The page you are looking for could not be found on Toolbaba. Return to Toolbaba and explore free online calculators and useful tools.">
 
-<style>
+  <meta name="robots" content="noindex, follow">
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+  <meta name="author" content="Toolbaba">
 
-body{
-  min-height:100vh;
-  font-family:Inter,Arial,sans-serif;
-  background:#f6f8fc;
-  color:#17243a;
-  display:flex;
-  flex-direction:column;
-}
+  <link rel="canonical"
+        href="https://toolbaba.vercel.app/404.html">
 
-header{
-  height:72px;
-  background:#fff;
-  border-bottom:1px solid #e6eaf1;
-  display:flex;
-  align-items:center;
-  padding:0 6%;
-}
+  <style>
 
-.logo{
-  font-size:27px;
-  font-weight:900;
-  letter-spacing:-1.3px;
-  color:#0b1b35;
-  text-decoration:none;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-.logo span{
-  color:#0759d8;
-}
+    :root{
+      --blue:#0759d8;
+      --dark:#0b1b35;
+      --text:#17243a;
+      --muted:#69778d;
+      --bg:#f6f8fc;
+      --white:#fff;
+      --border:#e6eaf1;
+    }
 
-main{
-  flex:1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:50px 20px;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-.box{
-  width:min(650px,100%);
-  background:#fff;
-  border:1px solid #e6eaf1;
-  border-radius:24px;
-  padding:55px 30px;
-  text-align:center;
-  box-shadow:0 12px 40px rgba(11,27,53,.06);
-}
+    body{
+      min-height:100vh;
+      font-family:Inter,Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      display:flex;
+      flex-direction:column;
+      line-height:1.6;
+    }
 
-.number{
-  font-size:clamp(75px,15vw,125px);
-  line-height:1;
-  font-weight:900;
-  letter-spacing:-7px;
-  color:#0759d8;
-  margin-bottom:15px;
-}
+    a{
+      -webkit-tap-highlight-color:transparent;
+    }
 
-h1{
-  font-size:30px;
-  letter-spacing:-1px;
-  margin-bottom:12px;
-}
 
-p{
-  color:#69778d;
-  font-size:15px;
-  max-width:480px;
-  margin:0 auto 27px;
-  line-height:1.7;
-}
+    /* =========================
+       HEADER
+    ========================== */
 
-.btn{
-  display:inline-block;
-  background:#0759d8;
-  color:#fff;
-  text-decoration:none;
-  padding:13px 22px;
-  border-radius:11px;
-  font-size:14px;
-  font-weight:800;
-}
+    header{
+      height:72px;
+      background:#fff;
+      border-bottom:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 6%;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
 
-.btn:hover{
-  opacity:.9;
-}
+    .logo{
+      font-size:27px;
+      font-weight:900;
+      letter-spacing:-1.3px;
+      color:var(--dark);
+      text-decoration:none;
+    }
 
-footer{
-  background:#081a35;
-  color:#9eb0ca;
-  padding:35px 20px;
-  text-align:center;
-}
+    .logo span{
+      color:var(--blue);
+    }
 
-.footer-logo{
-  color:#fff;
-  font-size:23px;
-  font-weight:900;
-  margin-bottom:8px;
-}
+    .nav{
+      display:flex;
+      align-items:center;
+      gap:30px;
+    }
 
-.footer-logo span{
-  color:#4f9cff;
-}
+    .nav a{
+      text-decoration:none;
+      color:#526075;
+      font-size:14px;
+      font-weight:700;
+      transition:.2s;
+    }
 
-footer p{
-  margin:0;
-  color:#9eb0ca;
-  font-size:12px;
-}
+    .nav a:hover{
+      color:var(--blue);
+    }
 
-@media(max-width:600px){
+    .nav-btn{
+      background:var(--blue)!important;
+      color:#fff!important;
+      padding:11px 17px;
+      border-radius:10px;
+    }
 
-  header{
-    padding:0 20px;
-  }
+    .menu{
+      display:none;
+      width:43px;
+      height:43px;
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:10px;
+      font-size:22px;
+      cursor:pointer;
+    }
 
-  .box{
-    padding:45px 22px;
-    border-radius:20px;
-  }
 
-  h1{
-    font-size:26px;
-  }
+    /* =========================
+       MAIN 404
+    ========================== */
 
-}
+    main{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:70px 20px;
+    }
 
-</style>
+    .box{
+      width:min(680px,100%);
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:60px 30px;
+      text-align:center;
+      box-shadow:0 12px 40px rgba(11,27,53,.06);
+    }
+
+    .number{
+      font-size:clamp(80px,16vw,135px);
+      line-height:1;
+      font-weight:900;
+      letter-spacing:-8px;
+      color:var(--blue);
+      margin-bottom:16px;
+    }
+
+    h1{
+      font-size:32px;
+      letter-spacing:-1px;
+      margin-bottom:12px;
+    }
+
+    .box p{
+      color:var(--muted);
+      font-size:15px;
+      max-width:500px;
+      margin:0 auto 28px;
+      line-height:1.75;
+    }
+
+    .actions{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      background:var(--blue);
+      color:#fff;
+      text-decoration:none;
+      padding:13px 22px;
+      border-radius:11px;
+      font-size:14px;
+      font-weight:800;
+      transition:.2s;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      opacity:.92;
+    }
+
+    .btn-secondary{
+      display:inline-block;
+      background:#eef5ff;
+      color:var(--blue);
+      text-decoration:none;
+      padding:13px 22px;
+      border-radius:11px;
+      font-size:14px;
+      font-weight:800;
+      transition:.2s;
+    }
+
+    .btn-secondary:hover{
+      transform:translateY(-2px);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      margin-top:65px;
+      background:#081a35;
+      color:#9eb0ca;
+      padding:50px 20px 25px;
+    }
+
+    .footer-container{
+      width:min(1180px,92%);
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.4fr 1fr 1fr;
+      gap:40px;
+      text-align:left;
+    }
+
+    .footer-logo{
+      color:#fff;
+      font-size:24px;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+
+    .footer-logo span{
+      color:#4f9cff;
+    }
+
+    .footer-about{
+      font-size:13px;
+      line-height:1.7;
+      max-width:360px;
+    }
+
+    .footer-column h3{
+      color:#fff;
+      font-size:14px;
+      margin-bottom:14px;
+    }
+
+    .footer-column a{
+      display:block;
+      color:#9eb0ca;
+      text-decoration:none;
+      font-size:13px;
+      margin-bottom:9px;
+    }
+
+    .footer-column a:hover{
+      color:#fff;
+    }
+
+    .footer-bottom{
+      width:min(1180px,92%);
+      margin:35px auto 0;
+      padding-top:20px;
+      border-top:1px solid rgba(255,255,255,.09);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      font-size:12px;
+      color:#71849f;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width:850px){
+
+      header{
+        padding:0 20px;
+      }
+
+      .menu{
+        display:block;
+      }
+
+      .nav{
+        display:none;
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        background:#fff;
+        padding:20px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:4px;
+        border-bottom:1px solid var(--border);
+      }
+
+      .nav.active{
+        display:flex;
+      }
+
+      .nav a{
+        padding:14px;
+        border-radius:9px;
+      }
+
+      .nav-btn{
+        text-align:center;
+        margin-top:5px;
+      }
+
+      main{
+        padding:55px 18px;
+      }
+
+      .box{
+        padding:48px 22px;
+        border-radius:20px;
+      }
+
+      h1{
+        font-size:27px;
+      }
+
+      .footer-container{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .footer-about{
+        grid-column:1/-1;
+      }
+
+      .footer-bottom{
+        flex-direction:column;
+      }
+
+    }
+
+
+    @media(max-width:480px){
+
+      .number{
+        letter-spacing:-5px;
+      }
+
+      h1{
+        font-size:25px;
+      }
+
+      .box p{
+        font-size:14px;
+      }
+
+      .actions{
+        flex-direction:column;
+      }
+
+      .btn,
+      .btn-secondary{
+        width:100%;
+        max-width:260px;
+      }
+
+      .footer-container{
+        grid-template-columns:1fr;
+      }
+
+      .footer-about{
+        grid-column:auto;
+      }
+
+    }
+
+  </style>
 
 </head>
 
+
 <body>
 
-<header>
 
-  <a href="index.html" class="logo">
-    Tool<span>baba</span>
-  </a>
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-</header>
+  <header>
 
+    <a href="index.html"
+       class="logo"
+       aria-label="Toolbaba Home">
 
-<main>
+      Tool<span>baba</span>
 
-  <div class="box">
-
-    <div class="number">
-      404
-    </div>
-
-    <h1>
-      Oops! Page Not Found
-    </h1>
-
-    <p>
-      The page you're looking for may have been moved,
-      deleted, or the address may be incorrect.
-      Let's get you back to Toolbaba.
-    </p>
-
-    <a href="index.html" class="btn">
-      ← Back to Toolbaba
     </a>
 
-  </div>
 
-</main>
+    <button
+      class="menu"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      onclick="toggleMenu()">
+
+      ☰
+
+    </button>
 
 
-<footer>
+    <nav class="nav" id="nav">
 
-  <div class="footer-logo">
-    Tool<span>baba</span>
-  </div>
+      <a href="index.html">
+        Home
+      </a>
 
-  <p>
-    Simple tools. Quick answers.
-  </p>
+      <a href="index.html#tools">
+        All Tools
+      </a>
 
-</footer>
+      <a href="index.html#categories">
+        Categories
+      </a>
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="contact.html"
+         class="nav-btn">
+
+        Contact
+
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =========================
+       404 CONTENT
+  ========================== -->
+
+  <main>
+
+    <section class="box"
+             aria-labelledby="page-title">
+
+      <div class="number">
+        404
+      </div>
+
+      <h1 id="page-title">
+        Oops! Page Not Found
+      </h1>
+
+      <p>
+        The page you're looking for may have been moved,
+        deleted, or the address may be incorrect.
+        Don't worry — you can return to Toolbaba
+        and continue exploring our useful online tools.
+      </p>
+
+
+      <div class="actions">
+
+        <a href="index.html"
+           class="btn">
+
+          ← Back to Toolbaba
+
+        </a>
+
+        <a href="index.html#tools"
+           class="btn-secondary">
+
+          Explore Tools →
+
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-container">
+
+
+      <div>
+
+        <div class="footer-logo">
+          Tool<span>baba</span>
+        </div>
+
+        <p class="footer-about">
+          Simple tools. Quick answers.
+          Toolbaba provides easy-to-use online
+          calculators and useful tools for everyday needs.
+        </p>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Quick Links
+        </h3>
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="index.html#tools">
+          All Tools
+        </a>
+
+        <a href="index.html#categories">
+          Categories
+        </a>
+
+        <a href="mobile-emi.html">
+          Mobile EMI
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h3>
+          Information
+        </h3>
+
+        <a href="about.html">
+          About Toolbaba
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="privacy-policy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms & Conditions
+        </a>
+
+        <a href="disclaimer.html">
+          Disclaimer
+        </a>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <div>
+        © 2026 Toolbaba. All rights reserved.
+      </div>
+
+      <div>
+        Simple tools. Quick answers.
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    function toggleMenu(){
+
+      const nav =
+        document.getElementById("nav");
+
+      const menu =
+        document.querySelector(".menu");
+
+      nav.classList.toggle("active");
+
+      const isOpen =
+        nav.classList.contains("active");
+
+      menu.setAttribute(
+        "aria-expanded",
+        isOpen
+      );
+
+    }
+
+
+    document
+      .querySelectorAll(".nav a")
+      .forEach(function(link){
+
+        link.addEventListener(
+          "click",
+          function(){
+
+            document
+              .getElementById("nav")
+              .classList
+              .remove("active");
+
+            document
+              .querySelector(".menu")
+              .setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+          }
+        );
+
+      });
+
+  </script>
+
 
 </body>
 </html>
