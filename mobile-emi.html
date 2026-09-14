@@ -1,518 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mobile EMI Calculator — Toolbaba</title>
-<meta name="description" content="Calculate mobile phone EMI easily with Toolbaba. Enter mobile price, down payment, interest rate and tenure.">
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-:root{
-  --blue:#0759d8;
-  --dark:#0b1b35;
-  --text:#17243a;
-  --muted:#69778d;
-  --bg:#f6f8fc;
-  --border:#e6eaf1;
-  --orange:#ff8b00;
-  --green:#16a34a;
-}
-
-body{
-  font-family:Inter,Arial,sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
-
-/* ================= HEADER ================= */
-
-header{
-  height:72px;
-  background:#fff;
-  border-bottom:1px solid var(--border);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 6%;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.logo{
-  font-size:27px;
-  font-weight:900;
-  letter-spacing:-1.3px;
-  color:var(--dark);
-}
-
-.logo span{
-  color:var(--blue);
-}
-
-.nav{
-  display:flex;
-  align-items:center;
-  gap:30px;
-}
-
-.nav a{
-  text-decoration:none;
-  color:#526075;
-  font-size:14px;
-  font-weight:700;
-}
-
-.nav a:hover{
-  color:var(--blue);
-}
-
-.nav-btn{
-  background:var(--blue)!important;
-  color:#fff!important;
-  padding:11px 17px;
-  border-radius:10px;
-}
-
-.menu{
-  display:none;
-  width:43px;
-  height:43px;
-  border:1px solid var(--border);
-  background:#fff;
-  border-radius:10px;
-  font-size:22px;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-  background:
-  radial-gradient(circle at 85% 20%,rgba(255,255,255,.14),transparent 25%),
-  linear-gradient(135deg,#062c73,#0969ed);
-  color:#fff;
-  text-align:center;
-  padding:55px 20px 65px;
-}
-
-.badge{
-  display:inline-flex;
-  padding:8px 14px;
-  border:1px solid rgba(255,255,255,.22);
-  background:rgba(255,255,255,.10);
-  border-radius:30px;
-  font-size:12px;
-  font-weight:900;
-  margin-bottom:18px;
-}
-
-.hero h1{
-  font-size:clamp(34px,5vw,52px);
-  letter-spacing:-2px;
-  margin-bottom:12px;
-}
-
-.hero p{
-  max-width:600px;
-  margin:auto;
-  color:#dce9ff;
-  line-height:1.6;
-  font-size:16px;
-}
-
-/* ================= MAIN ================= */
-
-.container{
-  width:min(1050px,92%);
-  margin:auto;
-}
-
-.calculator-section{
-  padding:45px 0 65px;
-}
-
-.calculator{
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:22px;
-}
-
-/* ================= FORM ================= */
-
-.form-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:28px;
-  box-shadow:0 10px 30px rgba(20,40,80,.05);
-}
-
-.form-title{
-  font-size:22px;
-  margin-bottom:5px;
-}
-
-.form-subtitle{
-  color:var(--muted);
-  font-size:13px;
-  margin-bottom:25px;
-}
-
-.field{
-  margin-bottom:19px;
-}
-
-.field label{
-  display:block;
-  font-size:13px;
-  font-weight:800;
-  margin-bottom:8px;
-}
-
-.input-wrap{
-  position:relative;
-}
-
-.input-wrap span{
-  position:absolute;
-  left:14px;
-  top:50%;
-  transform:translateY(-50%);
-  font-weight:800;
-  color:#66748a;
-}
-
-.input-wrap input{
-  width:100%;
-  height:50px;
-  border:1px solid #dfe5ee;
-  border-radius:11px;
-  outline:none;
-  padding:0 14px 0 35px;
-  font-size:15px;
-  color:var(--text);
-  background:#fff;
-}
-
-.input-wrap input:focus,
-select:focus{
-  border-color:var(--blue);
-  box-shadow:0 0 0 3px rgba(7,89,216,.08);
-}
-
-select{
-  width:100%;
-  height:50px;
-  border:1px solid #dfe5ee;
-  border-radius:11px;
-  padding:0 13px;
-  font-size:15px;
-  outline:none;
-  background:#fff;
-  color:var(--text);
-}
-
-/* TENURE */
-
-.tenure-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:8px;
-}
-
-.tenure{
-  height:43px;
-  border:1px solid #dfe5ee;
-  background:#fff;
-  border-radius:9px;
-  cursor:pointer;
-  font-size:13px;
-  font-weight:800;
-  color:#526075;
-}
-
-.tenure.active{
-  background:#eaf2ff;
-  border-color:var(--blue);
-  color:var(--blue);
-}
-
-/* CALCULATE */
-
-.calculate-btn{
-  width:100%;
-  height:53px;
-  border:0;
-  border-radius:12px;
-  background:linear-gradient(135deg,#0759d8,#0871ed);
-  color:#fff;
-  font-size:15px;
-  font-weight:900;
-  cursor:pointer;
-  margin-top:5px;
-  box-shadow:0 8px 20px rgba(7,89,216,.18);
-}
-
-.calculate-btn:hover{
-  transform:translateY(-1px);
-}
-
-/* ================= RESULT ================= */
-
-.result-card{
-  background:linear-gradient(145deg,#082d70,#075dcc);
-  color:#fff;
-  border-radius:22px;
-  padding:30px;
-  box-shadow:0 15px 35px rgba(7,89,216,.16);
-  min-height:100%;
-}
-
-.result-label{
-  color:#c9ddff;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-
-.result-card h2{
-  margin-top:10px;
-  font-size:17px;
-}
-
-.emi-box{
-  background:rgba(255,255,255,.11);
-  border:1px solid rgba(255,255,255,.16);
-  border-radius:17px;
-  padding:25px 20px;
-  margin:20px 0;
-  text-align:center;
-}
-
-.emi-box small{
-  color:#dce9ff;
-  font-size:12px;
-}
-
-.emi-value{
-  font-size:39px;
-  font-weight:900;
-  margin-top:7px;
-  letter-spacing:-1px;
-}
-
-.emi-value span{
-  font-size:17px;
-  font-weight:700;
-}
-
-.result-list{
-  border-top:1px solid rgba(255,255,255,.16);
-}
-
-.result-row{
-  display:flex;
-  justify-content:space-between;
-  padding:15px 0;
-  border-bottom:1px solid rgba(255,255,255,.13);
-  font-size:13px;
-}
-
-.result-row span:first-child{
-  color:#c9ddff;
-}
-
-.result-row strong{
-  color:#fff;
-}
-
-.note{
-  margin-top:20px;
-  color:#c9ddff;
-  font-size:11px;
-  line-height:1.6;
-}
-
-/* ================= QUICK INFO ================= */
-
-.info-section{
-  padding-bottom:60px;
-}
-
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-}
-
-.info-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:17px;
-  padding:21px;
-}
-
-.info-icon{
-  font-size:25px;
-  margin-bottom:12px;
-}
-
-.info-card h3{
-  font-size:16px;
-  margin-bottom:7px;
-}
-
-.info-card p{
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.6;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  margin-top:10px;
-  background:#081a35;
-  color:#9eb0ca;
-  padding:45px 20px;
-  text-align:center;
-}
-
-.footer-logo{
-  color:#fff;
-  font-size:24px;
-  font-weight:900;
-  margin-bottom:10px;
-}
-
-.footer-logo span{
-  color:#4f9cff;
-}
-
-footer p{
-  font-size:13px;
-  margin-bottom:18px;
-}
-
-.copyright{
-  font-size:12px;
-  color:#71849f;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:850px){
-
-  header{
-    padding:0 20px;
-  }
-
-  .menu{
-    display:block;
-    cursor:pointer;
-  }
-
-  .nav{
-    display:none;
-    position:absolute;
-    top:72px;
-    left:0;
-    width:100%;
-    background:#fff;
-    padding:20px;
-    flex-direction:column;
-    align-items:stretch;
-    gap:4px;
-    border-bottom:1px solid var(--border);
-  }
-
-  .nav.active{
-    display:flex;
-  }
-
-  .nav a{
-    padding:14px;
-    border-radius:9px;
-  }
-
-  .nav-btn{
-    text-align:center;
-    margin-top:5px;
-  }
-
-  .calculator{
-    grid-template-columns:1fr;
-  }
-
-  .result-card{
-    min-height:auto;
-  }
-
-  .info-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:480px){
-
-  .hero{
-    padding:45px 17px 50px;
-  }
-
-  .hero h1{
-    font-size:36px;
-  }
-
-  .container{
-    width:94%;
-  }
-
-  .calculator-section{
-    padding-top:25px;
-  }
-
-  .form-card,
-  .result-card{
-    padding:22px 18px;
-    border-radius:18px;
-  }
-
-  .tenure-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .emi-value{
-    font-size:34px;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mobile EMI Calculator | Toolbaba</title>
+  <meta name="description" content="Calculate your mobile phone EMI easily with Toolbaba Mobile EMI Calculator. Select a mobile, choose tenure and get instant EMI.">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      background:#f5f7fb;
+      color:#111827;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    header{
+      background:#fff;
+      border-bottom:1px solid #e5e7eb;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+
+    .nav{
+      max-width:1150px;
+      margin:auto;
+      padding:16px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo{
+      font-size:25px;
+      font-weight:800;
+      color:#111827;
+      text-decoration:none;
+    }
+
+    .logo span{
+      color:#2563eb;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:25px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#374151;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .nav-links a:hover{
+      color:#2563eb;
+    }
+
+    .menu-btn{
+      display:none;
+      font-size:26px;
+      border:0;
+      background:none;
+      cursor:pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      background:linear-gradient(135deg,#2563eb,#4f46e5);
+      color:white;
+      padding:55px 20px;
+      text-align:center;
+    }
+
+    .hero-badge{
+      display:inline-block;
+      background:rgba(255,255,255,.15);
+      border:1px solid rgba(255,255,255,.25);
+      padding:8px 15px;
+      border-radius:30px;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:15px;
+    }
+
+    .hero h1{
+      font-size:38px;
+      margin-bottom:12px;
+    }
+
+    .hero p{
+      max-width:650px;
+      margin:auto;
+      opacity:.9;
+      line-height:1.6;
+    }
+
+    /* ================= CALCULATOR ================= */
+
+    .container{
+      max-width:1050px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+
+    .calculator{
+      background:#fff;
+      border-radius:20px;
+      padding:28px;
+      box-shadow:0 10px 35px rgba(0,0,0,.08);
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+    }
+
+    .section-title{
+      font-size:20px;
+      font-weight:800;
+      margin-bottom:20px;
+    }
+
+    .field{
+      margin-bottom:18px;
+    }
+
+    label{
+      display:block;
+      font-size:14px;
+      font-weight:700;
+      margin-bottom:8px;
+      color:#374151;
+    }
+
+    select,
+    input{
+      width:100%;
+      padding:14px;
+      border:1px solid #d1d5db;
+      border-radius:10px;
+      font-size:15px;
+      outline:none;
+      background:white;
+    }
+
+    select:focus,
+    input:focus{
+      border-color:#2563eb;
+    }
+
+    input[readonly]{
+      background:#f3f4f6;
+      font-weight:700;
+    }
+
+    .price-note{
+      font-size:12px;
+      color:#6b7280;
+      margin-top:6px;
+    }
+
+    /* TENURE */
+
+    .tenure-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:9px;
+    }
+
+    .tenure-btn{
+      border:1px solid #d1d5db;
+      background:#fff;
+      padding:12px 5px;
+      border-radius:9px;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    .tenure-btn.active{
+      background:#2563eb;
+      color:#fff;
+      border-color:#2563eb;
+    }
+
+    /* RESULT */
+
+    .result{
+      background:linear-gradient(145deg,#eff6ff,#eef2ff);
+      border-radius:18px;
+      padding:25px;
+    }
+
+    .emi-label{
+      color:#6b7280;
+      font-size:14px;
+      margin-bottom:5px;
+    }
+
+    .emi-value{
+      color:#2563eb;
+      font-size:40px;
+      font-weight:900;
+      margin-bottom:25px;
+    }
+
+    .result-row{
+      display:flex;
+      justify-content:space-between;
+      padding:13px 0;
+      border-bottom:1px solid #dbe4f0;
+      font-size:14px;
+    }
+
+    .result-row:last-child{
+      border-bottom:0;
+    }
+
+    .result-row span:first-child{
+      color:#6b7280;
+    }
+
+    .result-row strong{
+      color:#111827;
+    }
+
+    .calculate-btn{
+      width:100%;
+      margin-top:20px;
+      padding:15px;
+      border:0;
+      border-radius:10px;
+      background:#2563eb;
+      color:#fff;
+      font-size:16px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .calculate-btn:hover{
+      background:#1d4ed8;
+    }
+
+    /* INFO */
+
+    .info{
+      margin-top:30px;
+      background:#fff;
+      border-radius:18px;
+      padding:25px;
+      box-shadow:0 5px 20px rgba(0,0,0,.05);
+    }
+
+    .info h2{
+      margin-bottom:10px;
+      font-size:22px;
+    }
+
+    .info p{
+      color:#6b7280;
+      line-height:1.7;
+      font-size:14px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:#111827;
+      color:#fff;
+      margin-top:60px;
+    }
+
+    .footer-inner{
+      max-width:1150px;
+      margin:auto;
+      padding:40px 20px;
+    }
+
+    .footer-logo{
+      font-size:24px;
+      font-weight:800;
+      margin-bottom:8px;
+    }
+
+    .footer-logo span{
+      color:#60a5fa;
+    }
+
+    .footer-inner p{
+      color:#9ca3af;
+      font-size:14px;
+    }
+
+    .copyright{
+      border-top:1px solid #374151;
+      margin-top:25px;
+      padding-top:20px;
+      font-size:13px;
+      color:#9ca3af;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:700px){
+
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:65px;
+        left:0;
+        width:100%;
+        background:#fff;
+        flex-direction:column;
+        padding:20px;
+        border-bottom:1px solid #e5e7eb;
+        gap:18px;
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+
+      .hero{
+        padding:42px 18px;
+      }
+
+      .hero h1{
+        font-size:30px;
+      }
+
+      .container{
+        margin:25px auto;
+        padding:0 14px;
+      }
+
+      .calculator{
+        grid-template-columns:1fr;
+        padding:20px;
+        gap:20px;
+      }
+
+      .emi-value{
+        font-size:34px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- ================= NAVBAR ================= -->
 
 <header>
+  <nav class="nav">
 
-  <div class="logo">Tool<span>baba</span></div>
+    <a href="index.html" class="logo">
+      Tool<span>baba</span>
+    </a>
 
-  <button class="menu" onclick="toggleMenu()">☰</button>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-  <nav class="nav" id="nav">
-    <a href="index.html">Home</a>
-    <a href="index.html#tools">All Tools</a>
-    <a href="index.html#categories">Categories</a>
-    <a href="#">About</a>
-    <a href="#" class="nav-btn">Contact</a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="index.html#tools">All Tools</a>
+      <a href="index.html#categories">Categories</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+
   </nav>
-
 </header>
 
 
@@ -520,13 +389,15 @@ footer p{
 
 <section class="hero">
 
-  <div class="badge">📱 MOBILE FINANCE TOOL</div>
+  <div class="hero-badge">
+    FREE ONLINE TOOL
+  </div>
 
   <h1>Mobile EMI Calculator</h1>
 
   <p>
-    Enter your mobile price, down payment and EMI tenure
-    to quickly find your monthly EMI.
+    Select your mobile, choose your tenure and instantly calculate
+    your monthly EMI.
   </p>
 
 </section>
@@ -536,256 +407,197 @@ footer p{
 
 <main class="container">
 
-<section class="calculator-section">
+  <div class="calculator">
 
-<div class="calculator">
+    <!-- LEFT SIDE -->
 
-  <!-- FORM -->
+    <div>
 
-  <div class="form-card">
-
-    <h2 class="form-title">Calculate Your EMI</h2>
-
-    <p class="form-subtitle">
-      Fill in the details below to calculate your mobile EMI.
-    </p>
-
-
-    <!-- MOBILE -->
-
-    <div class="field">
-
-      <label>📱 Mobile / Product Name</label>
-
-      <div class="input-wrap">
-        <input
-          type="text"
-          id="mobileName"
-          placeholder="e.g. Samsung Galaxy S25"
-          style="padding-left:14px;"
-        >
+      <div class="section-title">
+        Select Mobile
       </div>
 
-    </div>
+      <div class="field">
+
+        <label>Brand</label>
+
+        <select id="brand" onchange="loadModels()">
+
+          <option value="">Select Brand</option>
+
+          <option value="Apple">Apple</option>
+          <option value="Samsung">Samsung</option>
+          <option value="OnePlus">OnePlus</option>
+          <option value="Xiaomi">Xiaomi</option>
+          <option value="Redmi">Redmi</option>
+          <option value="Vivo">Vivo</option>
+          <option value="Oppo">Oppo</option>
+          <option value="Realme">Realme</option>
+          <option value="Motorola">Motorola</option>
+          <option value="Nothing">Nothing</option>
+
+        </select>
+
+      </div>
 
 
-    <!-- PRICE -->
+      <div class="field">
 
-    <div class="field">
+        <label>Mobile Model</label>
 
-      <label>Mobile Price</label>
+        <select id="model" onchange="setPrice()">
 
-      <div class="input-wrap">
+          <option value="">Select Model</option>
 
-        <span>₹</span>
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Mobile Price</label>
 
         <input
           type="number"
           id="price"
-          placeholder="Enter mobile price"
-          min="0"
+          value=""
+          placeholder="Select mobile first"
+          readonly
         >
+
+        <div class="price-note">
+          Price is automatically added after selecting the model.
+        </div>
 
       </div>
 
-    </div>
 
+      <div class="field">
 
-    <!-- DOWN PAYMENT -->
-
-    <div class="field">
-
-      <label>Down Payment</label>
-
-      <div class="input-wrap">
-
-        <span>₹</span>
+        <label>Down Payment</label>
 
         <input
           type="number"
           id="downPayment"
           value="0"
           min="0"
+          oninput="calculateEMI()"
         >
 
       </div>
 
-    </div>
 
+      <div class="field">
 
-    <!-- INTEREST -->
-
-    <div class="field">
-
-      <label>Annual Interest Rate</label>
-
-      <div class="input-wrap">
-
-        <span>%</span>
+        <label>Annual Interest Rate (%)</label>
 
         <input
           type="number"
-          id="interest"
+          id="interestRate"
           value="12"
           min="0"
           step="0.1"
+          oninput="calculateEMI()"
         >
 
       </div>
 
-    </div>
 
+      <div class="field">
 
-    <!-- TENURE -->
+        <label>Loan Tenure</label>
 
-    <div class="field">
+        <div class="tenure-grid">
 
-      <label>EMI Tenure</label>
+          <button class="tenure-btn" onclick="setTenure(3,this)">3 Months</button>
 
-      <div class="tenure-grid">
+          <button class="tenure-btn" onclick="setTenure(6,this)">6 Months</button>
 
-        <button class="tenure" data-month="3">3 Months</button>
+          <button class="tenure-btn" onclick="setTenure(9,this)">9 Months</button>
 
-        <button class="tenure" data-month="6">6 Months</button>
+          <button class="tenure-btn active" onclick="setTenure(12,this)">12 Months</button>
 
-        <button class="tenure" data-month="9">9 Months</button>
+          <button class="tenure-btn" onclick="setTenure(18,this)">18 Months</button>
 
-        <button class="tenure active" data-month="12">12 Months</button>
+          <button class="tenure-btn" onclick="setTenure(24,this)">24 Months</button>
 
-        <button class="tenure" data-month="18">18 Months</button>
-
-        <button class="tenure" data-month="24">24 Months</button>
+        </div>
 
       </div>
 
     </div>
 
 
-    <button class="calculate-btn" onclick="calculateEMI()">
-      Calculate EMI →
-    </button>
+    <!-- RIGHT SIDE -->
 
-  </div>
+    <div class="result">
 
-
-  <!-- RESULT -->
-
-  <div class="result-card">
-
-    <div class="result-label">
-      YOUR EMI RESULT
-    </div>
-
-    <h2 id="resultTitle">
-      Mobile EMI
-    </h2>
-
-
-    <div class="emi-box">
-
-      <small>Monthly EMI</small>
-
-      <div class="emi-value">
-        ₹<span id="monthlyEMI">0</span>
+      <div class="emi-label">
+        Monthly EMI
       </div>
 
-    </div>
+      <div class="emi-value" id="monthlyEMI">
+        ₹0
+      </div>
 
-
-    <div class="result-list">
 
       <div class="result-row">
         <span>Mobile Price</span>
-        <strong>₹<span id="resultPrice">0</span></strong>
+        <strong id="resultPrice">₹0</strong>
       </div>
 
       <div class="result-row">
         <span>Down Payment</span>
-        <strong>₹<span id="resultDown">0</span></strong>
+        <strong id="resultDown">₹0</strong>
       </div>
 
       <div class="result-row">
         <span>Loan Amount</span>
-        <strong>₹<span id="loanAmount">0</span></strong>
+        <strong id="resultLoan">₹0</strong>
       </div>
 
       <div class="result-row">
-        <span>Interest</span>
-        <strong>₹<span id="totalInterest">0</span></strong>
+        <span>Total Interest</span>
+        <strong id="resultInterest">₹0</strong>
       </div>
 
       <div class="result-row">
         <span>Total Payable</span>
-        <strong>₹<span id="totalPayable">0</span></strong>
+        <strong id="resultTotal">₹0</strong>
       </div>
 
       <div class="result-row">
         <span>Tenure</span>
-        <strong><span id="resultTenure">12</span> Months</strong>
+        <strong id="resultTenure">12 Months</strong>
       </div>
+
+
+      <button class="calculate-btn" onclick="calculateEMI()">
+        Calculate EMI
+      </button>
 
     </div>
 
-    <p class="note">
-      * This EMI is an estimate based on the information entered.
-      Actual EMI may vary according to the lender, processing fees
-      and applicable interest rate.
+  </div>
+
+
+  <!-- ================= INFO ================= -->
+
+  <div class="info">
+
+    <h2>How to use Mobile EMI Calculator?</h2>
+
+    <p>
+      1. Select your mobile brand.<br>
+      2. Select your mobile model.<br>
+      3. Mobile price will automatically appear.<br>
+      4. Enter your down payment.<br>
+      5. Select interest rate and loan tenure.<br>
+      6. Your monthly EMI and total payable amount will be calculated instantly.
     </p>
 
   </div>
-
-</div>
-
-</section>
-
-
-<!-- ================= INFO ================= -->
-
-<section class="info-section">
-
-  <div class="info-grid">
-
-    <div class="info-card">
-
-      <div class="info-icon">📱</div>
-
-      <h3>Choose Your Mobile</h3>
-
-      <p>
-        Enter the mobile or product name you want to purchase.
-      </p>
-
-    </div>
-
-
-    <div class="info-card">
-
-      <div class="info-icon">💰</div>
-
-      <h3>Enter Payment Details</h3>
-
-      <p>
-        Add the mobile price, down payment and interest rate.
-      </p>
-
-    </div>
-
-
-    <div class="info-card">
-
-      <div class="info-icon">⚡</div>
-
-      <h3>Get EMI Instantly</h3>
-
-      <p>
-        Select your tenure and get the estimated monthly EMI.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
 
 </main>
 
@@ -794,16 +606,20 @@ footer p{
 
 <footer>
 
-  <div class="footer-logo">
-    Tool<span>baba</span>
-  </div>
+  <div class="footer-inner">
 
-  <p>
-    Simple tools. Quick answers.
-  </p>
+    <div class="footer-logo">
+      Tool<span>baba</span>
+    </div>
 
-  <div class="copyright">
-    © 2026 Toolbaba. All rights reserved.
+    <p>
+      Simple tools. Quick answers.
+    </p>
+
+    <div class="copyright">
+      © 2026 Toolbaba. All rights reserved.
+    </div>
+
   </div>
 
 </footer>
@@ -811,159 +627,254 @@ footer p{
 
 <script>
 
-/* MOBILE MENU */
+  /* ================= MOBILE DATABASE ================= */
 
-function toggleMenu(){
+  const mobiles = {
 
-  document
-    .getElementById("nav")
-    .classList
-    .toggle("active");
+    Apple: {
+      "iPhone 16": 79900,
+      "iPhone 16 Plus": 89900,
+      "iPhone 16 Pro": 119900,
+      "iPhone 16 Pro Max": 144900
+    },
 
-}
+    Samsung: {
+      "Galaxy S25": 80999,
+      "Galaxy S25+": 99999,
+      "Galaxy S25 Ultra": 129999,
+      "Galaxy A56 5G": 41999
+    },
+
+    OnePlus: {
+      "OnePlus 13": 69999,
+      "OnePlus 13R": 42999,
+      "OnePlus Nord 5": 33999,
+      "OnePlus Nord CE5": 24999
+    },
+
+    Xiaomi: {
+      "Xiaomi 14": 59999,
+      "Xiaomi 14 Civi": 47999,
+      "Xiaomi 15": 64999
+    },
+
+    Redmi: {
+      "Redmi Note 14": 17999,
+      "Redmi Note 14 Pro": 24999,
+      "Redmi Note 14 Pro+": 29999,
+      "Redmi 14C": 9999
+    },
+
+    Vivo: {
+      "Vivo V50": 34999,
+      "Vivo V50e": 28999,
+      "Vivo V40": 34999,
+      "Vivo X200": 65999
+    },
+
+    Oppo: {
+      "Oppo Reno 13": 37999,
+      "Oppo Reno 13 Pro": 49999,
+      "Oppo F27": 22999,
+      "Oppo A5 Pro": 24999
+    },
+
+    Realme: {
+      "Realme GT 7": 39999,
+      "Realme GT 6": 40999,
+      "Realme P3 Pro": 26999,
+      "Realme 14 Pro": 27999
+    },
+
+    Motorola: {
+      "Motorola Edge 60 Fusion": 22999,
+      "Motorola Edge 60 Pro": 29999,
+      "Moto G85 5G": 17999,
+      "Moto G75 5G": 21999
+    },
+
+    Nothing: {
+      "Nothing Phone (3)": 79999,
+      "Nothing Phone (3a)": 24999,
+      "Nothing Phone (3a) Pro": 29999
+    }
+
+  };
 
 
-/* TENURE */
+  /* ================= VARIABLES ================= */
 
-let selectedTenure = 12;
+  let selectedTenure = 12;
 
-const tenureButtons =
-  document.querySelectorAll(".tenure");
 
-tenureButtons.forEach(function(button){
+  /* ================= LOAD MODELS ================= */
 
-  button.addEventListener("click",function(){
+  function loadModels(){
 
-    tenureButtons.forEach(function(btn){
+    const brand = document.getElementById("brand").value;
+    const model = document.getElementById("model");
+
+    model.innerHTML = '<option value="">Select Model</option>';
+
+    if(!brand){
+      document.getElementById("price").value = "";
+      calculateEMI();
+      return;
+    }
+
+    Object.keys(mobiles[brand]).forEach(function(phone){
+
+      const option = document.createElement("option");
+
+      option.value = phone;
+      option.textContent = phone;
+
+      model.appendChild(option);
+
+    });
+
+  }
+
+
+  /* ================= SET PRICE ================= */
+
+  function setPrice(){
+
+    const brand = document.getElementById("brand").value;
+    const model = document.getElementById("model").value;
+
+    if(brand && model){
+
+      const price = mobiles[brand][model];
+
+      document.getElementById("price").value = price;
+
+      document.getElementById("downPayment").max = price;
+
+    }else{
+
+      document.getElementById("price").value = "";
+
+    }
+
+    calculateEMI();
+
+  }
+
+
+  /* ================= TENURE ================= */
+
+  function setTenure(months, button){
+
+    selectedTenure = months;
+
+    document.querySelectorAll(".tenure-btn").forEach(function(btn){
       btn.classList.remove("active");
     });
 
-    this.classList.add("active");
+    button.classList.add("active");
 
-    selectedTenure =
-      Number(this.dataset.month);
+    document.getElementById("resultTenure").textContent =
+      months + " Months";
 
-  });
-
-});
-
-
-/* FORMAT MONEY */
-
-function formatMoney(number){
-
-  return Math.round(number).toLocaleString("en-IN");
-
-}
-
-
-/* CALCULATE EMI */
-
-function calculateEMI(){
-
-  const price =
-    Number(document.getElementById("price").value);
-
-  const downPayment =
-    Number(document.getElementById("downPayment").value);
-
-  const annualInterest =
-    Number(document.getElementById("interest").value);
-
-  const mobileName =
-    document.getElementById("mobileName").value.trim();
-
-
-  if(!price || price <= 0){
-
-    alert("Please enter the mobile price.");
-
-    return;
-  }
-
-
-  if(downPayment < 0 || downPayment >= price){
-
-    alert("Down payment must be less than the mobile price.");
-
-    return;
-  }
-
-
-  const loan =
-    price - downPayment;
-
-  const monthlyRate =
-    annualInterest / 12 / 100;
-
-  let emi;
-
-
-  if(monthlyRate === 0){
-
-    emi =
-      loan / selectedTenure;
-
-  }else{
-
-    emi =
-      loan *
-      monthlyRate *
-      Math.pow(
-        1 + monthlyRate,
-        selectedTenure
-      ) /
-      (
-        Math.pow(
-          1 + monthlyRate,
-          selectedTenure
-        ) - 1
-      );
+    calculateEMI();
 
   }
 
 
-  const totalPayable =
-    emi * selectedTenure;
+  /* ================= MONEY FORMAT ================= */
 
-  const totalInterest =
-    totalPayable - loan;
+  function formatMoney(amount){
 
+    return "₹" + Math.round(amount).toLocaleString("en-IN");
 
-  document.getElementById("monthlyEMI")
-    .textContent =
-    formatMoney(emi);
-
-  document.getElementById("resultPrice")
-    .textContent =
-    formatMoney(price);
-
-  document.getElementById("resultDown")
-    .textContent =
-    formatMoney(downPayment);
-
-  document.getElementById("loanAmount")
-    .textContent =
-    formatMoney(loan);
-
-  document.getElementById("totalInterest")
-    .textContent =
-    formatMoney(totalInterest);
-
-  document.getElementById("totalPayable")
-    .textContent =
-    formatMoney(totalPayable);
-
-  document.getElementById("resultTenure")
-    .textContent =
-    selectedTenure;
+  }
 
 
-  document.getElementById("resultTitle")
-    .textContent =
-    mobileName || "Mobile EMI";
+  /* ================= CALCULATE EMI ================= */
 
-}
+  function calculateEMI(){
+
+    const price =
+      parseFloat(document.getElementById("price").value) || 0;
+
+    const down =
+      parseFloat(document.getElementById("downPayment").value) || 0;
+
+    const annualRate =
+      parseFloat(document.getElementById("interestRate").value) || 0;
+
+    let loan = price - down;
+
+    if(loan < 0){
+      loan = 0;
+    }
+
+    const monthlyRate = annualRate / 12 / 100;
+
+    let emi = 0;
+
+    if(loan > 0){
+
+      if(monthlyRate === 0){
+
+        emi = loan / selectedTenure;
+
+      }else{
+
+        emi =
+          loan *
+          monthlyRate *
+          Math.pow(1 + monthlyRate, selectedTenure) /
+          (Math.pow(1 + monthlyRate, selectedTenure) - 1);
+
+      }
+
+    }
+
+    const totalPayable = emi * selectedTenure;
+
+    const totalInterest = totalPayable - loan;
+
+
+    document.getElementById("monthlyEMI").textContent =
+      formatMoney(emi);
+
+    document.getElementById("resultPrice").textContent =
+      formatMoney(price);
+
+    document.getElementById("resultDown").textContent =
+      formatMoney(down);
+
+    document.getElementById("resultLoan").textContent =
+      formatMoney(loan);
+
+    document.getElementById("resultInterest").textContent =
+      formatMoney(Math.max(totalInterest,0));
+
+    document.getElementById("resultTotal").textContent =
+      formatMoney(totalPayable);
+
+    document.getElementById("resultTenure").textContent =
+      selectedTenure + " Months";
+
+  }
+
+
+  /* ================= MOBILE MENU ================= */
+
+  function toggleMenu(){
+
+    document
+      .getElementById("navLinks")
+      .classList.toggle("show");
+
+  }
+
+
+  /* ================= START ================= */
+
+  calculateEMI();
 
 </script>
 
