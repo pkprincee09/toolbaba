@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Toolbaba — Simple Online Tools</title>
+<meta name="description" content="Toolbaba provides simple and useful online calculators and tools.">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --blue:#0759d8;
+  --dark:#0b1b35;
+  --text:#17243a;
+  --muted:#69778d;
+  --bg:#f6f8fc;
+  --border:#e6eaf1;
+  --orange:#ff8b00;
+}
+
+body{
+  font-family:Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* HEADER */
+
+header{
+  height:72px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:-1.3px;
+  color:var(--dark);
+}
+
+.logo span{
+  color:var(--blue);
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.nav a{
+  text-decoration:none;
+  color:#526075;
+  font-size:14px;
+  font-weight:700;
+}
+
+.nav a:hover{
+  color:var(--blue);
+}
+
+.nav-btn{
+  background:var(--blue)!important;
+  color:#fff!important;
+  padding:11px 17px;
+  border-radius:10px;
+}
+
+.menu{
+  display:none;
+  width:43px;
+  height:43px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:10px;
+  font-size:22px;
+}
+
+/* HERO */
+
+.hero{
+  background:
+  radial-gradient(circle at 85% 20%,rgba(255,255,255,.14),transparent 25%),
+  linear-gradient(135deg,#062c73,#0969ed);
+  padding:72px 20px 85px;
+  text-align:center;
+  color:#fff;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 14px;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.10);
+  border-radius:30px;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(40px,6vw,66px);
+  line-height:1.02;
+  letter-spacing:-3px;
+  margin-bottom:18px;
+}
+
+.hero h1 span{
+  color:#ffd166;
+}
+
+.hero p{
+  max-width:620px;
+  margin:auto;
+  color:#dce9ff;
+  line-height:1.7;
+  font-size:17px;
+}
+
+/* SEARCH */
+
+.search-box{
+  max-width:650px;
+  margin:32px auto 0;
+  background:#fff;
+  padding:7px;
+  border-radius:15px;
+  display:flex;
+  box-shadow:0 15px 45px rgba(0,0,0,.18);
+}
+
+.search-box input{
+  flex:1;
+  border:0;
+  outline:0;
+  padding:15px 16px;
+  font-size:15px;
+  color:#26344c;
+}
+
+.search-box button{
+  border:0;
+  background:var(--orange);
+  color:#fff;
+  padding:0 23px;
+  border-radius:11px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* MAIN */
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+.section{
+  padding:58px 0 10px;
+}
+
+.section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  margin-bottom:25px;
+}
+
+.section-head small{
+  display:block;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.2px;
+  margin-bottom:8px;
+}
+
+.section-head h2{
+  font-size:30px;
+  letter-spacing:-1px;
+}
+
+.view-all{
+  text-decoration:none;
+  color:var(--blue);
+  font-size:14px;
+  font-weight:800;
+}
+
+/* FEATURED */
+
+.featured{
+  display:grid;
+  grid-template-columns:1.7fr 1fr;
+  gap:18px;
+}
+
+.feature-card{
+  min-height:245px;
+  padding:32px;
+  border-radius:22px;
+  color:#fff;
+  text-decoration:none;
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#082d70,#0871ed);
+  box-shadow:0 12px 35px rgba(7,89,216,.15);
+}
+
+.feature-card:after{
+  content:"📱";
+  position:absolute;
+  right:30px;
+  bottom:10px;
+  font-size:105px;
+  opacity:.12;
+}
+
+.feature-icon{
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.14);
+  border-radius:15px;
+  font-size:27px;
+  margin-bottom:22px;
+}
+
+.feature-card h3{
+  font-size:25px;
+  margin-bottom:10px;
+}
+
+.feature-card p{
+  max-width:480px;
+  color:#dce9ff;
+  line-height:1.6;
+  font-size:14px;
+}
+
+.open-btn{
+  display:inline-block;
+  margin-top:20px;
+  background:#fff;
+  color:#0759d8;
+  padding:11px 17px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:900;
+}
+
+.side-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:27px;
+  text-decoration:none;
+  color:var(--text);
+  transition:.2s;
+}
+
+.side-card:hover,
+.tool-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 35px rgba(20,40,80,.08);
+}
+
+.side-icon{
+  width:52px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#eef5ff;
+  border-radius:14px;
+  font-size:25px;
+  margin-bottom:18px;
+}
+
+.side-card h3{
+  font-size:20px;
+  margin-bottom:8px;
+}
+
+.side-card p{
+  color:var(--muted);
+  line-height:1.55;
+  font-size:14px;
+}
+
+/* TOOLS */
+
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
+}
+
+.tool-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:23px;
+  text-decoration:none;
+  color:var(--text);
+  transition:.2s;
+}
+
+.tool-icon{
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#f0f5ff;
+  border-radius:13px;
+  font-size:23px;
+  margin-bottom:17px;
+}
+
+.tool-card h3{
+  font-size:17px;
+  margin-bottom:8px;
+}
+
+.tool-card p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.55;
+}
+
+.tool-arrow{
+  display:block;
+  margin-top:16px;
+  color:var(--blue);
+  font-size:13px;
+  font-weight:900;
+}
+
+/* CATEGORY */
+
+.categories{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.category{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:12px 18px;
+  color:#53627a;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* FOOTER */
+
+footer{
+  margin-top:65px;
+  background:#081a35;
+  color:#9eb0ca;
+  padding:45px 20px;
+  text-align:center;
+}
+
+.footer-logo{
+  color:#fff;
+  font-size:24px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.footer-logo span{
+  color:#4f9cff;
+}
+
+footer p{
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+.copyright{
+  font-size:12px;
+  color:#71849f;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  header{
+    padding:0 20px;
+  }
+
+  .menu{
+    display:block;
+    cursor:pointer;
+  }
+
+  .nav{
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    width:100%;
+    background:#fff;
+    padding:20px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:4px;
+    border-bottom:1px solid var(--border);
+  }
+
+  .nav.active{
+    display:flex;
+  }
+
+  .nav a{
+    padding:14px;
+    border-radius:9px;
+  }
+
+  .nav-btn{
+    text-align:center;
+    margin-top:5px;
+  }
+
+  .hero{
+    padding:55px 18px 65px;
+  }
+
+  .hero h1{
+    font-size:43px;
+    letter-spacing:-2px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .search-box{
+    margin-top:25px;
+  }
+
+  .search-box button{
+    padding:0 16px;
+  }
+
+  .featured{
+    grid-template-columns:1fr;
+  }
+
+  .tools-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .section-head h2{
+    font-size:26px;
+  }
+}
+
+@media(max-width:480px){
+
+  .tools-grid{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .tool-card{
+    padding:18px 15px;
+  }
+
+  .tool-card h3{
+    font-size:15px;
+  }
+
+  .tool-card p{
+    font-size:12px;
+  }
+
+  .feature-card{
+    padding:25px;
+  }
+
+  .side-card{
+    padding:22px;
+  }
+
+  .section{
+    padding-top:45px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">Tool<span>baba</span></div>
+
+  <button class="menu" onclick="toggleMenu()">☰</button>
+
+  <nav class="nav" id="nav">
+    <a href="#">Home</a>
+    <a href="#tools">All Tools</a>
+    <a href="#categories">Categories</a>
+    <a href="#">About</a>
+    <a href="#" class="nav-btn">Contact</a>
+  </nav>
+
+</header>
+
+
+<section class="hero">
+
+  <div class="badge">⚡ FREE ONLINE TOOLS</div>
+
+  <h1>Simple Tools.<br><span>Quick Answers.</span></h1>
+
+  <p>
+    Calculate, convert and solve everyday problems
+    with fast and easy-to-use online tools.
+  </p>
+
+  <div class="search-box">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="Search a tool... e.g. EMI, GST, Age"
+      onkeyup="searchTools()"
+    >
+    <button>Search</button>
+  </div>
+
+</section>
+
+
+<main class="container">
+
+  <!-- MOST USED -->
+
+  <section class="section">
+
+    <div class="section-head">
+      <div>
+        <small>🔥 MOST USED</small>
+        <h2>Popular Tools</h2>
+      </div>
+
+      <a href="#tools" class="view-all">View All →</a>
+    </div>
+
+
+    <div class="featured">
+
+      <a href="mobile-emi.html" class="feature-card">
+
+        <div class="feature-icon">📱</div>
+
+        <h3>Mobile EMI Calculator</h3>
+
+        <p>
+          Select a mobile, enter your down payment
+          and instantly calculate your monthly EMI.
+        </p>
+
+        <span class="open-btn">Calculate EMI →</span>
+
+      </a>
+
+
+      <a href="#" class="side-card">
+
+        <div class="side-icon">🧮</div>
+
+        <h3>Loan EMI Calculator</h3>
+
+        <p>
+          Calculate monthly EMI, total interest
+          and total repayment amount.
+        </p>
+
+        <span class="tool-arrow">Open Calculator →</span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ALL TOOLS -->
+
+  <section class="section" id="tools">
+
+    <div class="section-head">
+
+      <div>
+        <small>🧰 TOOLBOX</small>
+        <h2>All Tools</h2>
+      </div>
+
+    </div>
+
+
+    <div class="tools-grid" id="toolGrid">
+
+      <a href="mobile-emi.html" class="tool-card">
+
+        <div class="tool-icon">📱</div>
+
+        <h3>Mobile EMI</h3>
+
+        <p>Calculate your mobile phone EMI.</p>
+
+        <span class="tool-arrow">Open →</span>
+
+      </a>
+
+
+      <a href="#" class="tool-card">
+
+        <div class="tool-icon">🧮</div>
+
+        <h3>Loan EMI</h3>
+
+        <p>Calculate your monthly loan EMI.</p>
+
+        <span class="tool-arrow">Open →</span>
+
+      </a>
+
+
+      <a href="#" class="tool-card">
+
+        <div class="tool-icon">%</div>
+
+        <h3>Percentage</h3>
+
+        <p>Calculate percentages quickly.</p>
+
+        <span class="tool-arrow">Open →</span>
+
+      </a>
+
+
+      <a href="#" class="tool-card">
+
+        <div class="tool-icon">₹</div>
+
+        <h3>GST Calculator</h3>
+
+        <p>Calculate GST included or excluded.</p>
+
+        <span class="tool-arrow">Open →</span>
+
+      </a>
+
+
+      <a href="#" class="tool-card">
+
+        <div class="tool-icon">🏷️</div>
+
+        <h3>Discount</h3>
+
+        <p>Calculate discount and final price.</p>
+
+        <span class="tool-arrow">Open →</span>
+
+      </a>
+
+
+      <a href="#" class="tool-card">
+
+        <div class="tool-icon">📅</div>
+
+        <h3>Age Calculator</h3>
+
+        <p>Find your exact age instantly.</p>
+
+        <span class="tool-arrow">Open →</span>
+
+      </a>
+
+
+      <a href="#" class="tool-card">
+
+        <div class="tool-icon">📈</div>
+
+        <h3>SIP Calculator</h3>
+
+        <p>Estimate your SIP investment returns.</p>
+
+        <span class="tool-arrow">Open →</span>
+
+      </a>
+
+
+      <a href="#" class="tool-card">
+
+        <div class="tool-icon">💱</div>
+
+        <h3>Currency Converter</h3>
+
+        <p>Convert currencies quickly and easily.</p>
+
+        <span class="tool-arrow">Open →</span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- CATEGORIES -->
+
+  <section class="section" id="categories">
+
+    <div class="section-head">
+
+      <div>
+        <small>EXPLORE</small>
+        <h2>Tool Categories</h2>
+      </div>
+
+    </div>
+
+    <div class="categories">
+
+      <span class="category">💰 Finance</span>
+      <span class="category">📱 Mobile</span>
+      <span class="category">🧮 Calculators</span>
+      <span class="category">📊 Business</span>
+      <span class="category">📅 Everyday</span>
+      <span class="category">💱 Conversion</span>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-logo">Tool<span>baba</span></div>
+
+  <p>Simple tools. Quick answers.</p>
+
+  <div class="copyright">
+    © 2026 Toolbaba. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("active");
+}
+
+
+function searchTools(){
+
+  let input =
+    document.getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+  let cards =
+    document.querySelectorAll(".tool-card");
+
+  cards.forEach(function(card){
+
+    let text =
+      card.innerText.toLowerCase();
+
+    if(text.includes(input)){
+      card.style.display="";
+    }else{
+      card.style.display="none";
+    }
+
+  });
+
+}
+
+</script>
+
+</body>
+</html>
