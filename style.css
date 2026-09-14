@@ -1,0 +1,236 @@
+/* =========================================
+   TOOLBABA COMMON NAVBAR
+========================================= */
+
+.tb-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #e8edf5;
+
+  backdrop-filter: blur(12px);
+}
+
+
+.tb-nav-container {
+  max-width: 1180px;
+  height: 72px;
+
+  margin: auto;
+  padding: 0 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.tb-logo {
+  text-decoration: none;
+
+  font-size: 26px;
+  font-weight: 800;
+
+  color: #102a56;
+
+  letter-spacing: -1px;
+}
+
+
+.tb-logo span {
+  color: #2563eb;
+}
+
+
+/* DESKTOP NAV */
+
+.tb-nav-links {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+.tb-nav-links a {
+  text-decoration: none;
+
+  color: #334155;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: 0.2s;
+}
+
+
+.tb-nav-links a:hover {
+  color: #2563eb;
+}
+
+
+/* MOBILE BUTTON */
+
+.tb-menu-btn {
+  display: none;
+
+  border: 0;
+  background: transparent;
+
+  font-size: 27px;
+
+  cursor: pointer;
+
+  color: #102a56;
+}
+
+
+/* MOBILE MENU */
+
+.tb-mobile-menu {
+  display: none;
+
+  padding: 10px 20px 18px;
+
+  background: white;
+}
+
+
+.tb-mobile-menu a {
+  display: block;
+
+  padding: 13px 5px;
+
+  text-decoration: none;
+
+  color: #334155;
+
+  font-weight: 600;
+
+  border-bottom: 1px solid #eef2f7;
+}
+
+
+.tb-mobile-menu.active {
+  display: block;
+}
+
+
+/* =========================================
+   TOOLBABA COMMON FOOTER
+========================================= */
+
+.tb-footer {
+  margin-top: 60px;
+
+  background: #0b1b36;
+
+  color: white;
+}
+
+
+.tb-footer-container {
+  max-width: 1180px;
+
+  margin: auto;
+
+  padding: 45px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+.footer-logo {
+  color: white;
+}
+
+
+.tb-footer-brand p {
+  margin: 10px 0 0;
+
+  color: #aab7cc;
+
+  font-size: 14px;
+}
+
+
+.tb-footer-links {
+  display: flex;
+
+  gap: 24px;
+
+  flex-wrap: wrap;
+}
+
+
+.tb-footer-links a {
+  color: #dbe5f4;
+
+  text-decoration: none;
+
+  font-size: 14px;
+}
+
+
+.tb-footer-links a:hover {
+  color: white;
+}
+
+
+.tb-footer-bottom {
+  text-align: center;
+
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  padding: 18px 15px;
+
+  color: #91a0b7;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .tb-nav-container {
+    height: 64px;
+  }
+
+
+  .tb-nav-links {
+    display: none;
+  }
+
+
+  .tb-menu-btn {
+    display: block;
+  }
+
+
+  .tb-footer-container {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .tb-footer-links {
+    gap: 15px;
+  }
+
+}
