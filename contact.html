@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Toolbaba | Get in Touch</title>
+
+<meta name="description" content="Contact Toolbaba for questions, feedback, suggestions or support regarding our online tools and calculators.">
+
+<meta name="author" content="Toolbaba">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://toolbaba.vercel.app/contact.html">
+
+<meta property="og:title" content="Contact Toolbaba">
+<meta property="og:description" content="Get in touch with Toolbaba for questions, feedback and suggestions.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://toolbaba.vercel.app/contact.html">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --blue:#0759d8;
+  --dark:#0b1b35;
+  --text:#17243a;
+  --muted:#69778d;
+  --bg:#f6f8fc;
+  --border:#e6eaf1;
+}
+
+body{
+  font-family:Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+
+/* HEADER — SAME DESIGN */
+
+header{
+  height:72px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:-1.3px;
+  color:var(--dark);
+}
+
+.logo span{
+  color:var(--blue);
+}
+
+.logo-link{
+  text-decoration:none;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.nav a{
+  text-decoration:none;
+  color:#526075;
+  font-size:14px;
+  font-weight:700;
+}
+
+.nav a:hover{
+  color:var(--blue);
+}
+
+.nav-btn{
+  background:var(--blue)!important;
+  color:#fff!important;
+  padding:11px 17px;
+  border-radius:10px;
+}
+
+.menu{
+  display:none;
+  width:43px;
+  height:43px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:10px;
+  font-size:22px;
+}
+
+
+/* HERO */
+
+.hero{
+  background:
+  radial-gradient(
+    circle at 85% 20%,
+    rgba(255,255,255,.14),
+    transparent 25%
+  ),
+  linear-gradient(135deg,#062c73,#0969ed);
+
+  padding:68px 20px 75px;
+  color:#fff;
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 15px;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.10);
+  border-radius:30px;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(40px,6vw,60px);
+  line-height:1.05;
+  letter-spacing:-3px;
+  margin-bottom:17px;
+}
+
+.hero h1 span{
+  color:#ffd166;
+}
+
+.hero p{
+  max-width:650px;
+  margin:auto;
+  color:#dce9ff;
+  font-size:17px;
+}
+
+
+/* MAIN */
+
+.container{
+  width:min(1080px,92%);
+  margin:auto;
+}
+
+.section{
+  padding-top:50px;
+}
+
+
+/* CONTACT GRID */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:20px;
+}
+
+
+/* INFO */
+
+.info{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:32px;
+}
+
+.label{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.2px;
+  margin-bottom:8px;
+}
+
+.info h2{
+  font-size:29px;
+  letter-spacing:-1px;
+  margin-bottom:12px;
+}
+
+.info > p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.8;
+  margin-bottom:25px;
+}
+
+.contact-item{
+  display:flex;
+  align-items:flex-start;
+  gap:14px;
+  padding:17px 0;
+  border-top:1px solid var(--border);
+}
+
+.contact-icon{
+  width:43px;
+  height:43px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#eef5ff;
+  border-radius:12px;
+  font-size:20px;
+}
+
+.contact-item h3{
+  font-size:14px;
+  margin-bottom:3px;
+}
+
+.contact-item p,
+.contact-item a{
+  color:var(--muted);
+  font-size:13px;
+  text-decoration:none;
+  word-break:break-word;
+}
+
+.contact-item a:hover{
+  color:var(--blue);
+}
+
+
+/* FORM */
+
+.form-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:32px;
+}
+
+.form-card h2{
+  font-size:27px;
+  letter-spacing:-.7px;
+  margin-bottom:7px;
+}
+
+.form-card > p{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:23px;
+}
+
+.form-group{
+  margin-bottom:17px;
+}
+
+.form-group label{
+  display:block;
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:7px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+  width:100%;
+  border:1px solid var(--border);
+  background:#fafcff;
+  border-radius:11px;
+  padding:13px 14px;
+  font-family:inherit;
+  font-size:14px;
+  color:var(--text);
+  outline:none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+  border-color:var(--blue);
+  background:#fff;
+}
+
+.form-group textarea{
+  min-height:135px;
+  resize:vertical;
+}
+
+.submit-btn{
+  width:100%;
+  border:0;
+  background:var(--blue);
+  color:#fff;
+  padding:14px;
+  border-radius:11px;
+  font-family:inherit;
+  font-size:14px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.submit-btn:hover{
+  opacity:.92;
+}
+
+
+/* NOTE */
+
+.note{
+  margin-top:18px;
+  padding:17px;
+  border-radius:13px;
+  background:#f4f8ff;
+  border:1px solid #dce9ff;
+  color:#526075;
+  font-size:12px;
+  line-height:1.7;
+}
+
+
+/* FAQ */
+
+.faq{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:32px;
+}
+
+.faq h2{
+  font-size:27px;
+  margin-bottom:20px;
+}
+
+.faq-item{
+  border-top:1px solid var(--border);
+  padding:17px 0;
+}
+
+.faq-item h3{
+  font-size:15px;
+  margin-bottom:6px;
+}
+
+.faq-item p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+}
+
+
+/* FOOTER — SAME DESIGN */
+
+footer{
+  margin-top:65px;
+  background:#081a35;
+  color:#9eb0ca;
+  padding:45px 20px;
+  text-align:center;
+}
+
+.footer-logo{
+  color:#fff;
+  font-size:24px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.footer-logo span{
+  color:#4f9cff;
+}
+
+footer p{
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+.copyright{
+  font-size:12px;
+  color:#71849f;
+}
+
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  header{
+    padding:0 20px;
+  }
+
+  .menu{
+    display:block;
+    cursor:pointer;
+  }
+
+  .nav{
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    width:100%;
+    background:#fff;
+    padding:20px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:4px;
+    border-bottom:1px solid var(--border);
+  }
+
+  .nav.active{
+    display:flex;
+  }
+
+  .nav a{
+    padding:14px;
+    border-radius:9px;
+  }
+
+  .nav-btn{
+    text-align:center;
+    margin-top:5px;
+  }
+
+  .hero{
+    padding:54px 18px 62px;
+  }
+
+  .hero h1{
+    font-size:43px;
+    letter-spacing:-2px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .info,
+  .form-card,
+  .faq{
+    padding:25px;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .info,
+  .form-card,
+  .faq{
+    padding:22px;
+    border-radius:18px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+  <a href="index.html" class="logo-link">
+    <div class="logo">
+      Tool<span>baba</span>
+    </div>
+  </a>
+
+  <button
+    class="menu"
+    onclick="toggleMenu()"
+    aria-label="Open navigation menu">
+    ☰
+  </button>
+
+  <nav class="nav" id="nav">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="index.html#tools">
+      All Tools
+    </a>
+
+    <a href="index.html#categories">
+      Categories
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="contact.html" class="nav-btn">
+      Contact
+    </a>
+
+  </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="badge">
+    💬 CONTACT TOOLBABA
+  </div>
+
+  <h1>
+    Let's Stay<br>
+    <span>Connected.</span>
+  </h1>
+
+  <p>
+    Have a question, suggestion or feedback?
+    We'd be happy to hear from you.
+  </p>
+
+</section>
+
+
+<main class="container">
+
+
+<!-- CONTACT AREA -->
+
+<section class="section">
+
+  <div class="contact-grid">
+
+
+    <!-- CONTACT INFORMATION -->
+
+    <div class="info">
+
+      <div class="label">
+        GET IN TOUCH
+      </div>
+
+      <h2>
+        Contact Toolbaba
+      </h2>
+
+      <p>
+        If you have a question about our tools, want to
+        report an issue, or have an idea that could make
+        Toolbaba better, you can reach us using the details
+        below.
+      </p>
+
+
+      <div class="contact-item">
+
+        <div class="contact-icon">
+          ✉️
+        </div>
+
+        <div>
+
+          <h3>
+            Email
+          </h3>
+
+          <a href="mailto:pkprincebus8888@gmail.com">
+            pkprincebus8888@gmail.com
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="contact-item">
+
+        <div class="contact-icon">
+          💬
+        </div>
+
+        <div>
+
+          <h3>
+            WhatsApp
+          </h3>
+
+          <a
+            href="https://wa.me/916394585927"
+            target="_blank"
+            rel="noopener">
+            +91 6394585927
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="contact-item">
+
+        <div class="contact-icon">
+          🌍
+        </div>
+
+        <div>
+
+          <h3>
+            Availability
+          </h3>
+
+          <p>
+            Worldwide
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="contact-item">
+
+        <div class="contact-icon">
+          🌐
+        </div>
+
+        <div>
+
+          <h3>
+            Website
+          </h3>
+
+          <p>
+            toolbaba.vercel.app
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FORM -->
+
+    <div class="form-card">
+
+      <h2>
+        Send a Message
+      </h2>
+
+      <p>
+        Fill in the details below. Your email application
+        will open when you submit the form.
+      </p>
+
+
+      <form onsubmit="sendMessage(event)">
+
+        <div class="form-group">
+
+          <label for="name">
+            Your Name
+          </label>
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name"
+            required>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="email">
+            Your Email
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="subject">
+            Subject
+          </label>
+
+          <select id="subject">
+
+            <option>
+              General Question
+            </option>
+
+            <option>
+              Tool Feedback
+            </option>
+
+            <option>
+              Report a Problem
+            </option>
+
+            <option>
+              Suggest a Tool
+            </option>
+
+            <option>
+              Business / Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="message">
+            Message
+          </label>
+
+          <textarea
+            id="message"
+            placeholder="Write your message..."
+            required></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="submit-btn">
+          Send Message →
+        </button>
+
+      </form>
+
+
+      <div class="note">
+
+        <strong>Privacy note:</strong>
+        Please avoid sending passwords, payment details,
+        identity documents or other sensitive personal
+        information through this form.
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- FAQ -->
+
+<section class="section">
+
+  <div class="faq">
+
+    <h2>
+      Contact FAQ
+    </h2>
+
+
+    <div class="faq-item">
+
+      <h3>
+        What can I contact Toolbaba about?
+      </h3>
+
+      <p>
+        You can contact us about questions, feedback,
+        suggestions, technical problems or ideas for
+        future tools.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        How should I report a problem with a tool?
+      </h3>
+
+      <p>
+        Tell us which tool you were using, what happened,
+        and what result you expected. This information
+        helps us understand the issue.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Can I suggest a new tool?
+      </h3>
+
+      <p>
+        Yes. If there is a useful calculator, converter or
+        everyday tool you would like to see on Toolbaba,
+        you can send us your suggestion.
+      </p>
+
+    </div>
+
+
+    <div class="faq-item">
+
+      <h3>
+        Does Toolbaba serve users outside India?
+      </h3>
+
+      <p>
+        Yes. Toolbaba is designed for a worldwide audience.
+        However, some tools may be specific to a particular
+        country or region.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-logo">
+    Tool<span>baba</span>
+  </div>
+
+  <p>
+    Simple tools. Quick answers.
+  </p>
+
+  <div class="copyright">
+    © 2026 Toolbaba. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+  document
+    .getElementById("nav")
+    .classList
+    .toggle("active");
+
+}
+
+
+function sendMessage(event){
+
+  event.preventDefault();
+
+  const name =
+    document.getElementById("name").value.trim();
+
+  const email =
+    document.getElementById("email").value.trim();
+
+  const subject =
+    document.getElementById("subject").value;
+
+  const message =
+    document.getElementById("message").value.trim();
+
+
+  const body =
+`Hello Toolbaba,
+
+Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}`;
+
+
+  const mailto =
+    "mailto:pkprincebus8888@gmail.com" +
+    "?subject=" +
+    encodeURIComponent(subject) +
+    "&body=" +
+    encodeURIComponent(body);
+
+
+  window.location.href = mailto;
+
+}
+
+</script>
+
+
+</body>
+</html>
