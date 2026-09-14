@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Disclaimer | Toolbaba</title>
+
+<meta name="description" content="Read the Toolbaba Disclaimer for information about our online calculators, tools, content and third-party services.">
+
+<meta name="author" content="Toolbaba">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://toolbaba.vercel.app/disclaimer.html">
+
+<meta property="og:title" content="Disclaimer | Toolbaba">
+<meta property="og:description" content="Important information about Toolbaba tools, calculations and website content.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://toolbaba.vercel.app/disclaimer.html">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --blue:#0759d8;
+  --dark:#0b1b35;
+  --text:#17243a;
+  --muted:#69778d;
+  --bg:#f6f8fc;
+  --border:#e6eaf1;
+}
+
+body{
+  font-family:Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+/* HEADER */
+
+header{
+  height:72px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:-1.3px;
+  color:var(--dark);
+}
+
+.logo span{
+  color:var(--blue);
+}
+
+.logo-link{
+  text-decoration:none;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.nav a{
+  text-decoration:none;
+  color:#526075;
+  font-size:14px;
+  font-weight:700;
+}
+
+.nav a:hover{
+  color:var(--blue);
+}
+
+.nav-btn{
+  background:var(--blue)!important;
+  color:#fff!important;
+  padding:11px 17px;
+  border-radius:10px;
+}
+
+.menu{
+  display:none;
+  width:43px;
+  height:43px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:10px;
+  font-size:22px;
+}
+
+/* HERO */
+
+.hero{
+  background:
+  radial-gradient(
+    circle at 85% 20%,
+    rgba(255,255,255,.14),
+    transparent 25%
+  ),
+  linear-gradient(135deg,#062c73,#0969ed);
+
+  padding:65px 20px 70px;
+  color:#fff;
+  text-align:center;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 15px;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.10);
+  border-radius:30px;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(38px,6vw,58px);
+  line-height:1.05;
+  letter-spacing:-2.5px;
+  margin-bottom:16px;
+}
+
+.hero h1 span{
+  color:#ffd166;
+}
+
+.hero p{
+  max-width:650px;
+  margin:auto;
+  color:#dce9ff;
+  font-size:15px;
+}
+
+/* CONTENT */
+
+.container{
+  width:min(900px,92%);
+  margin:auto;
+}
+
+.content{
+  margin-top:45px;
+}
+
+.last-updated{
+  background:#eef5ff;
+  border:1px solid #dce9ff;
+  color:#526075;
+  padding:15px 18px;
+  border-radius:12px;
+  font-size:13px;
+  margin-bottom:25px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:32px;
+}
+
+.section{
+  padding-bottom:30px;
+  margin-bottom:30px;
+  border-bottom:1px solid var(--border);
+}
+
+.section:last-child{
+  border-bottom:0;
+  margin-bottom:0;
+  padding-bottom:0;
+}
+
+.section h2{
+  font-size:23px;
+  letter-spacing:-.5px;
+  margin-bottom:11px;
+}
+
+.section p{
+  color:#526075;
+  font-size:14px;
+  margin-bottom:12px;
+}
+
+.section ul{
+  padding-left:22px;
+  color:#526075;
+  font-size:14px;
+}
+
+.section li{
+  margin-bottom:8px;
+}
+
+.section a{
+  color:var(--blue);
+  text-decoration:none;
+  font-weight:700;
+}
+
+.highlight{
+  background:#f6f8fc;
+  border-left:4px solid var(--blue);
+  padding:16px 18px;
+  border-radius:8px;
+  margin-top:15px;
+  color:#526075;
+  font-size:13px;
+}
+
+/* FOOTER */
+
+footer{
+  margin-top:65px;
+  background:#081a35;
+  color:#9eb0ca;
+  padding:45px 20px;
+  text-align:center;
+}
+
+.footer-logo{
+  color:#fff;
+  font-size:24px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.footer-logo span{
+  color:#4f9cff;
+}
+
+footer p{
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+.copyright{
+  font-size:12px;
+  color:#71849f;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  header{
+    padding:0 20px;
+  }
+
+  .menu{
+    display:block;
+    cursor:pointer;
+  }
+
+  .nav{
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    width:100%;
+    background:#fff;
+    padding:20px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:4px;
+    border-bottom:1px solid var(--border);
+  }
+
+  .nav.active{
+    display:flex;
+  }
+
+  .nav a{
+    padding:14px;
+    border-radius:9px;
+  }
+
+  .nav-btn{
+    text-align:center;
+    margin-top:5px;
+  }
+
+  .hero{
+    padding:52px 18px 60px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .card{
+    padding:23px;
+    border-radius:18px;
+  }
+
+  .section h2{
+    font-size:21px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+  <a href="index.html" class="logo-link">
+    <div class="logo">
+      Tool<span>baba</span>
+    </div>
+  </a>
+
+  <button
+    class="menu"
+    onclick="toggleMenu()"
+    aria-label="Open navigation menu">
+    ☰
+  </button>
+
+  <nav class="nav" id="nav">
+
+    <a href="index.html">Home</a>
+
+    <a href="index.html#tools">All Tools</a>
+
+    <a href="index.html#categories">Categories</a>
+
+    <a href="about.html">About</a>
+
+    <a href="contact.html" class="nav-btn">Contact</a>
+
+  </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="badge">
+    ⚠️ IMPORTANT INFORMATION
+  </div>
+
+  <h1>
+    Toolbaba <span>Disclaimer</span>
+  </h1>
+
+  <p>
+    Important information about our tools,
+    calculations and website content.
+  </p>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<main class="container content">
+
+  <div class="last-updated">
+    <strong>Last updated:</strong> September 14, 2026
+  </div>
+
+  <div class="card">
+
+
+    <section class="section">
+
+      <h2>1. General Information</h2>
+
+      <p>
+        Toolbaba provides online calculators, tools and
+        informational content for general and educational
+        purposes.
+      </p>
+
+      <p>
+        While we aim to provide useful and accurate
+        information, we do not guarantee that every result,
+        calculation or piece of content will always be
+        complete, current or error-free.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>2. Calculator Results</h2>
+
+      <p>
+        Results generated by Toolbaba calculators depend on
+        the values and information entered by the user and
+        the calculation methods used by the particular tool.
+      </p>
+
+      <div class="highlight">
+        Calculator results are estimates or informational
+        outputs and should not automatically be treated as
+        official quotes, financial statements or professional
+        advice.
+      </div>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>3. Financial Information</h2>
+
+      <p>
+        Some Toolbaba tools may relate to loans, EMIs,
+        investments, savings, percentages, taxes or other
+        financial calculations.
+      </p>
+
+      <p>
+        Such tools are provided for general informational
+        purposes and do not constitute financial, investment,
+        banking, tax or professional advice.
+      </p>
+
+      <p>
+        Before making an important financial decision, verify
+        the relevant figures and consult an appropriately
+        qualified professional or official source.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>4. Tax and Legal Information</h2>
+
+      <p>
+        Any tax, legal or regulatory information presented on
+        Toolbaba is general information only.
+      </p>
+
+      <p>
+        Laws, regulations, rates and requirements can change
+        and may differ between countries or regions.
+      </p>
+
+      <p>
+        Always verify applicable requirements with an official
+        government source or qualified professional.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>5. No Professional Advice</h2>
+
+      <p>
+        Toolbaba content should not be considered a substitute
+        for professional financial, legal, tax, medical or
+        other specialized advice.
+      </p>
+
+      <p>
+        You are responsible for determining whether
+        professional advice is appropriate for your situation.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>6. Third-Party Information</h2>
+
+      <p>
+        Toolbaba may reference or link to information,
+        websites or services operated by third parties.
+      </p>
+
+      <p>
+        We do not guarantee the accuracy, availability or
+        reliability of third-party information and are not
+        responsible for changes made by external services.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>7. Advertising Disclaimer</h2>
+
+      <p>
+        Toolbaba may display advertisements from third-party
+        advertising providers.
+      </p>
+
+      <p>
+        Advertisements are separate from Toolbaba's original
+        editorial content. The presence of an advertisement
+        does not necessarily mean that Toolbaba endorses the
+        advertised product or service.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>8. External Links</h2>
+
+      <p>
+        Links to external websites may be provided for
+        convenience or additional information.
+      </p>
+
+      <p>
+        Once you leave Toolbaba, the external website's own
+        terms, privacy policy and practices apply.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>9. User Responsibility</h2>
+
+      <p>
+        Users are responsible for checking important
+        information and results before relying on them.
+      </p>
+
+      <ul>
+        <li>Check important calculations independently.</li>
+        <li>Verify current rates and official requirements.</li>
+        <li>Do not rely on a calculator as the sole basis for an important decision.</li>
+        <li>Use professional advice when appropriate.</li>
+      </ul>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>10. Changes to This Disclaimer</h2>
+
+      <p>
+        Toolbaba may update this Disclaimer when our website,
+        tools or services change.
+      </p>
+
+      <p>
+        Any updated version will be published on this page
+        with a revised update date.
+      </p>
+
+    </section>
+
+
+    <section class="section">
+
+      <h2>11. Contact Toolbaba</h2>
+
+      <p>
+        If you have questions regarding this Disclaimer,
+        please contact us.
+      </p>
+
+      <p>
+        Email:
+        <a href="mailto:pkprincebus8888@gmail.com">
+          pkprincebus8888@gmail.com
+        </a>
+      </p>
+
+      <p>
+        Website:
+        <a href="https://toolbaba.vercel.app/">
+          toolbaba.vercel.app
+        </a>
+      </p>
+
+    </section>
+
+
+  </div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-logo">
+    Tool<span>baba</span>
+  </div>
+
+  <p>
+    Simple tools. Quick answers.
+  </p>
+
+  <div class="copyright">
+    © 2026 Toolbaba. All rights reserved.
+  </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+  document
+    .getElementById("nav")
+    .classList
+    .toggle("active");
+
+}
+
+</script>
+
+</body>
+</html>
