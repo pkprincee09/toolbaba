@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Toolbaba | Simple Online Tools & Calculators</title>
+
+<meta name="description" content="Learn about Toolbaba, a simple online tools platform created to make everyday calculations, conversions and useful digital tasks easier.">
+
+<meta name="keywords" content="about Toolbaba, online tools, free calculators, useful online calculators, Toolbaba">
+
+<meta name="author" content="Toolbaba">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://toolbaba.vercel.app/about.html">
+
+<meta property="og:title" content="About Toolbaba | Simple Online Tools">
+<meta property="og:description" content="Learn about Toolbaba and our goal of making useful online tools simple and accessible.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://toolbaba.vercel.app/about.html">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --blue:#0759d8;
+  --dark:#0b1b35;
+  --text:#17243a;
+  --muted:#69778d;
+  --bg:#f6f8fc;
+  --border:#e6eaf1;
+  --orange:#ff8b00;
+}
+
+body{
+  font-family:Inter,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+
+/* =========================
+   HEADER
+   SAME DESIGN
+========================= */
+
+header{
+  height:72px;
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 6%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:-1.3px;
+  color:var(--dark);
+}
+
+.logo span{
+  color:var(--blue);
+}
+
+.logo-link{
+  text-decoration:none;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:30px;
+}
+
+.nav a{
+  text-decoration:none;
+  color:#526075;
+  font-size:14px;
+  font-weight:700;
+}
+
+.nav a:hover{
+  color:var(--blue);
+}
+
+.nav-btn{
+  background:var(--blue)!important;
+  color:#fff!important;
+  padding:11px 17px;
+  border-radius:10px;
+}
+
+.menu{
+  display:none;
+  width:43px;
+  height:43px;
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:10px;
+  font-size:22px;
+}
+
+
+/* =========================
+   ABOUT HERO
+========================= */
+
+.about-hero{
+  background:
+  radial-gradient(
+    circle at 85% 20%,
+    rgba(255,255,255,.14),
+    transparent 25%
+  ),
+  linear-gradient(135deg,#062c73,#0969ed);
+
+  padding:68px 20px 78px;
+  color:#fff;
+  text-align:center;
+}
+
+.about-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:8px 15px;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.10);
+  border-radius:30px;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.about-hero h1{
+  font-size:clamp(40px,6vw,62px);
+  line-height:1.04;
+  letter-spacing:-3px;
+  margin-bottom:18px;
+}
+
+.about-hero h1 span{
+  color:#ffd166;
+}
+
+.about-hero p{
+  max-width:690px;
+  margin:auto;
+  color:#dce9ff;
+  font-size:17px;
+  line-height:1.75;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+  width:min(1080px,92%);
+  margin:auto;
+}
+
+.section{
+  padding:55px 0 0;
+}
+
+
+/* =========================
+   INTRO CARD
+========================= */
+
+.intro-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:23px;
+  padding:38px;
+  box-shadow:0 10px 35px rgba(20,40,80,.05);
+}
+
+.section-label{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.3px;
+  margin-bottom:9px;
+}
+
+.intro-card h2{
+  font-size:31px;
+  letter-spacing:-1px;
+  margin-bottom:15px;
+}
+
+.intro-card p{
+  color:#596980;
+  font-size:15px;
+  line-height:1.85;
+  margin-bottom:13px;
+}
+
+.intro-card p:last-child{
+  margin-bottom:0;
+}
+
+
+/* =========================
+   MISSION GRID
+========================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.info-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:30px;
+  transition:.2s;
+}
+
+.info-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 14px 35px rgba(20,40,80,.08);
+}
+
+.info-icon{
+  width:54px;
+  height:54px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#eef5ff;
+  border-radius:15px;
+  font-size:25px;
+  margin-bottom:18px;
+}
+
+.info-card h2{
+  font-size:22px;
+  margin-bottom:10px;
+  letter-spacing:-.5px;
+}
+
+.info-card p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.75;
+}
+
+
+/* =========================
+   VALUES
+========================= */
+
+.values-section{
+  margin-top:18px;
+}
+
+.values-title{
+  text-align:center;
+  margin-bottom:24px;
+}
+
+.values-title small{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:1.2px;
+}
+
+.values-title h2{
+  font-size:30px;
+  margin-top:7px;
+  letter-spacing:-1px;
+}
+
+.values{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:17px;
+}
+
+.value{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:25px;
+}
+
+.value-icon{
+  font-size:24px;
+  margin-bottom:15px;
+}
+
+.value h3{
+  font-size:17px;
+  margin-bottom:8px;
+}
+
+.value p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+}
+
+
+/* =========================
+   HOW WE BUILD
+========================= */
+
+.process{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:35px;
+}
+
+.process h2{
+  font-size:27px;
+  margin-bottom:12px;
+  letter-spacing:-.7px;
+}
+
+.process-intro{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:24px;
+}
+
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.step{
+  border:1px solid var(--border);
+  border-radius:15px;
+  padding:21px;
+  background:#fafcff;
+}
+
+.step-number{
+  width:34px;
+  height:34px;
+  border-radius:10px;
+  background:#eaf2ff;
+  color:var(--blue);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:13px;
+  margin-bottom:13px;
+}
+
+.step h3{
+  font-size:16px;
+  margin-bottom:7px;
+}
+
+.step p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+}
+
+
+/* =========================
+   TRANSPARENCY
+========================= */
+
+.trust{
+  background:linear-gradient(135deg,#082d70,#0871ed);
+  border-radius:22px;
+  padding:35px;
+  color:#fff;
+}
+
+.trust h2{
+  font-size:27px;
+  margin-bottom:12px;
+  letter-spacing:-.7px;
+}
+
+.trust p{
+  color:#dce9ff;
+  max-width:850px;
+  font-size:14px;
+  line-height:1.8;
+  margin-bottom:10px;
+}
+
+.trust p:last-child{
+  margin-bottom:0;
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+.faq-wrap{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:32px;
+}
+
+.faq-wrap h2{
+  font-size:27px;
+  margin-bottom:20px;
+}
+
+.faq{
+  border-top:1px solid var(--border);
+  padding:18px 0;
+}
+
+.faq:last-child{
+  padding-bottom:0;
+}
+
+.faq h3{
+  font-size:16px;
+  margin-bottom:7px;
+}
+
+.faq p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+}
+
+
+/* =========================
+   CONTACT CTA
+========================= */
+
+.cta{
+  margin-top:20px;
+  text-align:center;
+  padding:40px 25px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+}
+
+.cta h2{
+  font-size:28px;
+  letter-spacing:-.7px;
+  margin-bottom:10px;
+}
+
+.cta p{
+  color:var(--muted);
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.cta-btn{
+  display:inline-block;
+  background:var(--blue);
+  color:#fff;
+  text-decoration:none;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:800;
+}
+
+.cta-btn:hover{
+  opacity:.92;
+}
+
+
+/* =========================
+   FOOTER
+   SAME DESIGN
+========================= */
+
+footer{
+  margin-top:65px;
+  background:#081a35;
+  color:#9eb0ca;
+  padding:45px 20px;
+  text-align:center;
+}
+
+.footer-logo{
+  color:#fff;
+  font-size:24px;
+  font-weight:900;
+  margin-bottom:10px;
+}
+
+.footer-logo span{
+  color:#4f9cff;
+}
+
+footer p{
+  font-size:13px;
+  margin-bottom:18px;
+}
+
+.copyright{
+  font-size:12px;
+  color:#71849f;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+  header{
+    padding:0 20px;
+  }
+
+  .menu{
+    display:block;
+    cursor:pointer;
+  }
+
+  .nav{
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    width:100%;
+    background:#fff;
+    padding:20px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:4px;
+    border-bottom:1px solid var(--border);
+  }
+
+  .nav.active{
+    display:flex;
+  }
+
+  .nav a{
+    padding:14px;
+    border-radius:9px;
+  }
+
+  .nav-btn{
+    text-align:center;
+    margin-top:5px;
+  }
+
+  .about-hero{
+    padding:54px 18px 63px;
+  }
+
+  .about-hero h1{
+    font-size:43px;
+    letter-spacing:-2px;
+  }
+
+  .about-hero p{
+    font-size:15px;
+  }
+
+  .section{
+    padding-top:42px;
+  }
+
+  .intro-card{
+    padding:27px;
+  }
+
+  .intro-card h2{
+    font-size:27px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .values{
+    grid-template-columns:1fr;
+  }
+
+  .steps{
+    grid-template-columns:1fr;
+  }
+
+  .process{
+    padding:27px;
+  }
+
+  .trust{
+    padding:28px;
+  }
+
+  .faq-wrap{
+    padding:25px;
+  }
+
+}
+
+@media(max-width:480px){
+
+  .about-hero h1{
+    font-size:38px;
+  }
+
+  .intro-card{
+    padding:22px;
+    border-radius:18px;
+  }
+
+  .info-card{
+    padding:23px;
+  }
+
+  .process{
+    padding:22px;
+  }
+
+  .trust{
+    padding:24px;
+    border-radius:18px;
+  }
+
+}
+
+
+/* ACCESSIBILITY */
+
+a:focus,
+button:focus{
+  outline:3px solid rgba(7,89,216,.25);
+  outline-offset:3px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+  <a href="index.html" class="logo-link">
+
+    <div class="logo">
+      Tool<span>baba</span>
+    </div>
+
+  </a>
+
+
+  <button
+    class="menu"
+    onclick="toggleMenu()"
+    aria-label="Open navigation menu">
+
+    ☰
+
+  </button>
+
+
+  <nav class="nav" id="nav">
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a href="index.html#tools">
+      All Tools
+    </a>
+
+    <a href="index.html#categories">
+      Categories
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="contact.html" class="nav-btn">
+      Contact
+    </a>
+
+  </nav>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="about-hero">
+
+  <div class="about-badge">
+    🌍 ABOUT TOOLBABA
+  </div>
+
+  <h1>
+    Tools That Make<br>
+    <span>Everyday Tasks Easier.</span>
+  </h1>
+
+  <p>
+    Toolbaba is built to provide simple, practical and
+    easy-to-use online tools for calculations, conversions
+    and everyday digital needs.
+  </p>
+
+</section>
+
+
+
+<main class="container">
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section">
+
+  <div class="intro-card">
+
+    <div class="section-label">
+      ABOUT US
+    </div>
+
+    <h2>
+      What is Toolbaba?
+    </h2>
+
+    <p>
+      Toolbaba is an online platform focused on making
+      everyday calculations and useful digital tasks
+      easier to understand and complete.
+    </p>
+
+    <p>
+      Many online calculators can feel complicated,
+      especially when users only need a quick and clear
+      answer. Toolbaba aims to provide a cleaner experience
+      where users can enter the information they need and
+      understand the result without unnecessary steps.
+    </p>
+
+    <p>
+      The platform is designed for a worldwide audience.
+      Our tools may cover areas such as finance, mobile
+      purchases, percentages, discounts, age calculations,
+      investments, conversions and other practical needs.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     MISSION + VISION
+========================= -->
+
+<section class="section">
+
+  <div class="grid">
+
+
+    <div class="info-card">
+
+      <div class="info-icon">
+        🎯
+      </div>
+
+      <h2>
+        Our Mission
+      </h2>
+
+      <p>
+        Our mission is to make useful online tools simple,
+        accessible and understandable for everyone.
+        We want users to spend less time dealing with
+        complicated interfaces and more time getting useful
+        answers.
+      </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+      <div class="info-icon">
+        💡
+      </div>
+
+      <h2>
+        Our Approach
+      </h2>
+
+      <p>
+        We focus on practical tools, clear instructions,
+        responsive design and useful explanations. As
+        Toolbaba grows, we aim to improve existing tools
+        and add more genuinely useful resources.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     VALUES
+========================= -->
+
+<section class="section values-section">
+
+  <div class="values-title">
+
+    <small>
+      WHAT MATTERS TO US
+    </small>
+
+    <h2>
+      Built With Simple Principles
+    </h2>
+
+  </div>
+
+
+  <div class="values">
+
+
+    <div class="value">
+
+      <div class="value-icon">
+        ⚡
+      </div>
+
+      <h3>
+        Simple Experience
+      </h3>
+
+      <p>
+        We try to keep tools straightforward so users can
+        understand what information they need to enter and
+        what the result means.
+      </p>
+
+    </div>
+
+
+    <div class="value">
+
+      <div class="value-icon">
+        📱
+      </div>
+
+      <h3>
+        Mobile Friendly
+      </h3>
+
+      <p>
+        Toolbaba is designed with smartphones, tablets and
+        desktop users in mind so useful tools can be accessed
+        from different devices.
+      </p>
+
+    </div>
+
+
+    <div class="value">
+
+      <div class="value-icon">
+        🌍
+      </div>
+
+      <h3>
+        Worldwide Access
+      </h3>
+
+      <p>
+        Toolbaba is intended for users around the world,
+        while some individual tools may contain
+        country-specific calculations or information.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     HOW WE BUILD
+========================= -->
+
+<section class="section">
+
+  <div class="process">
+
+    <div class="section-label">
+      OUR FOCUS
+    </div>
+
+    <h2>
+      How We Aim to Build Better Tools
+    </h2>
+
+    <p class="process-intro">
+      Every useful tool should solve a real problem. Our
+      approach is based on understanding the task first,
+      keeping the interface simple and providing information
+      that helps users understand the result.
+    </p>
+
+
+    <div class="steps">
+
+
+      <div class="step">
+
+        <div class="step-number">
+          01
+        </div>
+
+        <h3>
+          Understand the Need
+        </h3>
+
+        <p>
+          We focus on common tasks where users need a
+          practical online solution.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">
+          02
+        </div>
+
+        <h3>
+          Keep It Simple
+        </h3>
+
+        <p>
+          Inputs, buttons and results should be clear and
+          easy to understand.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">
+          03
+        </div>
+
+        <h3>
+          Improve Over Time
+        </h3>
+
+        <p>
+          We aim to improve existing tools and add useful
+          features based on practical needs.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     TRANSPARENCY
+========================= -->
+
+<section class="section">
+
+  <div class="trust">
+
+    <h2>
+      Useful Information Matters
+    </h2>
+
+    <p>
+      Toolbaba aims to provide more than a result box.
+      Where appropriate, our tools and future resources
+      will include explanations, examples, calculation
+      details and frequently asked questions.
+    </p>
+
+    <p>
+      This helps users understand how a calculation works
+      instead of simply receiving a number without context.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="section">
+
+  <div class="faq-wrap">
+
+    <h2>
+      Frequently Asked Questions
+    </h2>
+
+
+    <div class="faq">
+
+      <h3>
+        What is Toolbaba?
+      </h3>
+
+      <p>
+        Toolbaba is an online platform that provides
+        simple calculators and useful digital tools for
+        everyday tasks.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>
+        Who can use Toolbaba?
+      </h3>
+
+      <p>
+        Toolbaba is designed for a worldwide audience.
+        Anyone who needs a simple online calculation or
+        practical tool can use the platform.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>
+        Can I use Toolbaba on a mobile phone?
+      </h3>
+
+      <p>
+        Yes. The website is designed to work across
+        smartphones, tablets and desktop devices.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>
+        Are all Toolbaba tools available already?
+      </h3>
+
+      <p>
+        Toolbaba is being developed gradually. Some tools
+        are available while additional useful tools may be
+        introduced over time.
+      </p>
+
+    </div>
+
+
+    <div class="faq">
+
+      <h3>
+        How can I contact Toolbaba?
+      </h3>
+
+      <p>
+        You can contact us through the Contact page using
+        the available email or WhatsApp contact details.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT CTA
+========================= -->
+
+<section class="section">
+
+  <div class="cta">
+
+    <h2>
+      Have a Question?
+    </h2>
+
+    <p>
+      If you have feedback, a suggestion or a question
+      about Toolbaba, feel free to contact us.
+    </p>
+
+    <a href="contact.html" class="cta-btn">
+      Contact Toolbaba →
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="footer-logo">
+    Tool<span>baba</span>
+  </div>
+
+  <p>
+    Simple tools. Quick answers.
+  </p>
+
+  <div class="copyright">
+    © 2026 Toolbaba. All rights reserved.
+  </div>
+
+</footer>
+
+
+
+<script>
+
+function toggleMenu(){
+
+  document
+    .getElementById("nav")
+    .classList
+    .toggle("active");
+
+}
+
+</script>
+
+
+</body>
+</html>
